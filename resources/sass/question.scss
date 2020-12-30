@@ -1,0 +1,358 @@
+.question{
+    &__wrapper{
+        @include wrapper();
+    }
+    &__items{
+        
+        @include above($break_lg) {
+            padding-left: rem(216);
+        }
+    }
+    
+    &_header{
+        border-radius: 0 0 1px 1px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.16), inset 0 -1px 0 rgba(0, 0, 0, 0.08);
+        min-height: rem(170);
+        @include above($break_sm) {
+            min-height: rem(246);
+        }
+        @include above($break_lg) {
+            min-height: rem(230);
+        }
+
+        &__wrapper{
+            @include wrapper();
+        }
+
+        &__items{
+            position: relative;
+            padding-top: rem(56);
+            padding-bottom: rem(34);
+            box-sizing: border-box;
+        
+            @include above($break_sm) {
+                padding-top: rem(80);
+                padding-bottom: rem(50);
+            }
+            @include above($break_lg) {
+                padding-top: rem(64);
+            }
+        }
+    
+        &_step{
+            font-size: rem(12);
+            font-weight: rem(12);
+            color: $gray;
+            letter-spacing: rem(6);
+            font-weight: 300;
+            line-height: 1.33;
+            text-transform: uppercase;
+            margin-bottom: rem(8);
+    
+            @include above($break_sm) {
+                font-size: rem(16);
+                line-height: 1.25;
+                margin-bottom: rem(16);
+            }
+        }
+        &_title{
+            font-size: rem(20);
+            font-weight: 700;
+            letter-spacing: rem(-0.4);
+            line-height: 1.4;
+    
+            @include above($break_sm) {
+                font-size: rem(32);
+                letter-spacing: rem(-0.6);
+                line-height: 1.25;
+            }
+            @include above($break_lg) {
+                padding-right: rem(260);
+            }
+        }
+        &_close{
+            position: absolute;
+            top: rem(16);
+            right: 0;
+        }
+    }
+    &_content{
+        padding-top: rem(48);
+        padding-bottom: rem(48);
+
+        @include above($break_sm) {
+            padding-top: rem(64);
+            
+        }
+
+        &__items{
+            min-height: calc(100vh - 169px - 44px - 22px - 96px);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            @include above($break_sm) {
+                display: flex;
+                min-height: auto;
+                flex-direction: row;
+            }
+            @include above($break_lg) {
+                padding-right: rem(260);
+            }
+        }
+
+        &__list{
+            @include above($break_sm) {
+                width: 50%;
+            }
+        }
+
+        &__ctrl{
+            display: flex;
+            align-items: center;
+            @include above($break_sm) {
+                justify-content: flex-end;
+                width: 50%;
+            }
+        }
+    }
+
+    &__list{
+        li{
+            font-size: rem(16);
+            font-weight: 300;
+            line-height: 1.5;
+
+            &:not(:last-child){
+                margin-bottom: rem(35);
+            }
+        }
+
+        &_group{
+            @include row-flex(); 
+
+            &:not(:last-child){
+                margin-bottom: rem(32) !important;
+                @include above($break_sm) {
+                    margin-bottom: rem(74) !important;
+                }
+            }
+
+            .radio{
+                @include col();
+                @include size(12);
+            }
+
+        }
+        &_title{
+            @include col();
+            @include size(24);
+            font-weight: 700;
+            letter-spacing: rem(-0.2);
+            margin-bottom: rem(12);
+            width: 100%;
+            
+            @include above($break_sm) {
+                font-size: rem(20);
+                line-height: 1.3;
+                margin-bottom: rem(16);
+            }
+        }
+
+    }
+
+    .btn__group{
+        display: flex;
+        max-width: $break_xs;
+        width: 100%;
+        margin-top: rem(24);
+        @include above($break_sm) {
+            max-width: rem(285);
+            margin-top: 0;
+        }
+        .btn_prev{
+            width: rem(62);
+            @include above($break_sm) {
+                width: rem(84);
+            }
+        }
+        .btn_next{
+            width: 100%;
+        }
+    }
+
+    &__final{
+        @include row-flex();
+        &_text{
+            @include col();
+            @include size(24);
+            font-weight: 300;
+            line-height: 1.5;
+            margin-bottom: rem(18);
+        }
+        .input_wrapper{
+            @include col();
+            @include size(24);
+            @include size-sm(12);
+            @include size-lg(11);
+            @include above($break_sm) {
+                max-width: none;
+            }
+        }
+        &_btn{
+            @include col();
+            @include size(24);
+            @include size-sm(11);
+            @include size-lg(12);
+            @include offset-left-sm(1);
+            
+            .btn{
+                margin-top: rem(16);
+                width: 100%;
+                max-width: $break_xs;
+
+                @include above($break_sm) {
+                    margin-top: 0;
+                }
+            }
+            .alarm{
+                margin-top: rem(36);
+                max-width: $break_xs;
+
+                @include above($break_sm) {
+                    margin-top: rem(16);
+                }
+            }
+        }
+    }
+    
+}
+
+.gift{
+    background-size: cover;
+    background-position: 75%;
+    @include above($break_sm) {
+        background-position: top center;
+    }
+    @include above($break_lg) {
+        background: none !important;
+    }
+
+    &.en{
+        background-image: url('img/gift_en_sm-min.jpg');
+
+        @include above($break_sm) {
+            background-image: url('img/gift_en_lg-min.jpg');
+        }
+        .gift_bg{
+            @include above($break_lg) {
+                background-image: url('img/gift_en_lg-min.jpg');
+            }
+        }
+    }
+    &.ru{
+        background-image: url('img/gift_ru_sm-min.jpg');
+
+        @include above($break_sm) {
+            background-image: url('img/gift_ru_lg-min.jpg');
+        }
+        .gift_bg{
+            @include above($break_lg) {
+                background-image: url('img/gift_ru_lg-min.jpg');
+            }
+        }
+    }
+
+    &_bg{
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        padding-bottom: rem(48);
+        position: relative;
+        width: 100%;
+
+        @include above($break_sm) {
+            justify-content: flex-end;
+        }
+        @include above($break_lg) {
+            background-size: cover;
+            background-position: top center;
+        }
+
+    }
+
+    &__items{
+        min-height: calc(100vh - 170px - 44px - 22px);
+        box-sizing: border-box;
+        display: flex;
+       
+        @include above($break_sm) {
+            min-height: calc(100vh - 246px - 80px);
+        }
+        @include above($break_lg) {
+            padding-right: rem(260);
+        }
+    }
+}
+
+.thanks{
+    background-image: url('img/mask.svg');
+    background-size: cover;
+    background-position: center top;
+    width: 100%;
+    min-height: calc(100vh - 44px - 22px);
+    position: relative;
+    display: flex;
+
+    @include above($break_sm) {
+        min-height: calc(100vh - 80px);
+    }
+
+    &__wrapper{
+        @include wrapper();
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    &_title{
+        font-size: rem(30);
+        font-weight: 700;
+        letter-spacing: rem(-0.7);
+        line-height: 1.33;
+        margin-top: rem(16);
+        margin-bottom: rem(48);
+        @include above($break_sm) {
+            font-size: rem(48);
+            letter-spacing: rem(-1);
+        }
+    }
+    &_subtitle{
+        font-weight: 300;
+        letter-spacing: rem(8);
+        line-height: 1.25;
+        text-transform: uppercase;
+        color: $gray;
+    }
+    &_link{
+        margin-bottom: rem(32);
+        text-decoration: underline;
+    }
+    &_btn{
+        max-width: $break_xs;
+        width: 100%;
+        @include above($break_sm) {
+            max-width: rem(350);
+        }
+    }
+    &_img{
+        position: absolute;
+        bottom: 10%;
+        left: 0;
+        right: 0;
+        margin: auto;
+        z-index: -1;
+    }
+}

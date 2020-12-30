@@ -1,0 +1,86 @@
+.modal{
+
+    &_mask {
+        position: fixed;
+        z-index: 9998;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, .5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: opacity .3s ease;
+    }
+
+    &_container {
+        max-width: rem(320);
+        width: 100%;
+        min-height: rem(396);
+        padding: rem(64) rem(32) rem(32);
+        box-sizing: border-box;
+        background-color: #fff;
+        border-radius: rem(1);
+        box-shadow: 0 rem(16) rem(24) rgba(0, 0, 0, 0.12), 
+                    0 0 rem(16) rgba(0, 0, 0, 0.08), 
+                    inset 0 rem(-1) 0 rgba(0, 0, 0, 0.1);
+        transition: all .3s ease;
+        position: relative;
+
+        @include above($break_sm) {
+            max-width: rem(368);
+        }
+
+        .input{
+            width: 100%;
+            margin-bottom: rem(16);
+        }
+        .btn{
+            width: 100%;
+            margin-bottom: rem(16);
+        }
+    }
+
+    &_title{
+        font-size: rem(32);
+        font-weight: 700;
+        letter-spacing: rem(-0.6);
+        line-height: 1.25;
+        margin-bottom: rem(8);
+
+        &_send{
+            margin-bottom: rem(114);
+        }
+    }
+
+    &_intro{
+        line-height: 1.63;
+        color: #6b6b6b;
+        margin-bottom: rem(20);
+    }
+    &_close{
+        position: absolute;
+        top: rem(16);
+        right: rem(16);
+    }
+
+
+    //animation
+    &-enter {
+        opacity: 0;
+    }
+
+    &-leave-active {
+        opacity: 0;
+    }
+
+    &-enter &-container,
+    &-leave-active &-container {
+        transform: scale(1.1);
+    }
+    //end animation
+
+
+
+}

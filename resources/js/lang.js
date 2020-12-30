@@ -1,0 +1,78 @@
+import Vue from 'vue'
+import { MLInstaller, MLCreate, MLanguage } from 'vue-multilanguage'
+
+Vue.use(MLInstaller)
+
+export default new MLCreate({
+    initial: 'ru',
+    save: process.env.NODE_ENV === 'production',
+    languages: [
+        new MLanguage('ru').create({
+            callBack: 'Заказать&nbsp;звонок',
+            title: 'Регистрация бизнеса в&nbsp;Казахстане',
+            subtitle: 'Ответьте на 3&nbsp;вопроса и&nbsp;получите точную стоимость регистрации компании и&nbsp;приятный&nbsp;подарок',
+            btn: 'Получить стоимость и&nbsp;подарок',
+            site_link: 'Перейти на сайт',
+            header_step: 'Вопрос {0}',
+            header_thank: 'Спасибо',
+            header_title_1: 'Выберите форму регистрации <br>юридического&nbsp;лица',
+            header_title_2: 'Организационно-правовые вопросы',
+            header_title_3: 'Когда планируете регистрацию компании?',
+            header_title_4: 'Получите точную стоимость регистрации компании и&nbsp;подарок',
+            opt1_1: 'Товарищество с ограниченной ответственностью (ТОО)',
+            opt1_2: 'Филиал или представительство',
+            opt1_3: 'Не знаю',
+            opt2_1: 'Учредитель юридическое лицо?',
+            opt2_2: 'Директор гражданин Казахстана?',
+            opt2_3: 'Учредитель резидент Казахстана?',
+            opt3_1: 'В ближайшие дни',
+            opt3_2: 'В течении месяца',
+            opt3_3: 'Прицениваюсь',
+            yes: 'Да',
+            no: 'Нет',
+            next: 'Далее →',
+            final_text: 'Введите номер телефона и&nbsp;получите расчёт&nbsp;на WhatsApp и&nbsp;СМС <br>в&nbsp;течение <span class="mark">5 минут.</span>',
+            alarm: 'Оставляя контактную информацию, вы соглашаетесь на обработку персональных данных',
+            thanks_subtitle: 'Спасибо!',
+            thanks_title: 'Ваша заявка принята',
+            thanks_link: 'Скачать файл',
+            modal_title: 'Заказать&nbsp;звонок',
+            modal_intro: 'Заполните форму и&nbsp;мы свяжемся с&nbsp;вами в&nbsp;течение <span class="mark">5&nbsp;минут.</span>',
+            send: 'Отправить',
+            title_send: 'Cпасибо, заявка отправлена'
+        }),
+        new MLanguage('en').create({
+            callBack: 'Order a call',
+            title: 'Company formation in&nbsp;Kazakhstan',
+            subtitle: 'Discover questionnaire and get a&nbsp;detailed cost report and gift from &nbsp;in&nbsp;three simple steps',
+            btn: 'Get personalized report and&nbsp;gift!',
+            site_link: 'Visit website',
+            header_step: 'Question {0}',
+            header_thank: 'Thank you',
+            header_title_1: 'Please select legal form',
+            header_title_2: 'Legal Matters',
+            header_title_3: 'When are you planning to register a&nbsp;company?',
+            header_title_4: 'Get a detailed cost report and a&nbsp;gift from&nbsp;us!',
+            opt1_1: 'Limited Liability Partnership',
+            opt1_2: 'Branch or Representative Office',
+            opt1_3: 'I don’t know',
+            opt2_1: 'Is the Founder a corporate body?',
+            opt2_2: 'Is the Director a Citizen of Kazakhstan?',
+            opt2_3: 'Is the Founder a resident of Kazakhstan?',
+            opt3_1: 'Within a few days',
+            opt3_2: 'Within a month',
+            opt3_3: 'I’m checking prices ',
+            yes: 'Yes',
+            no: 'No',
+            next: 'Next →',
+            final_text: 'Please enter your phone number and get a&nbsp;quote on&nbsp;WhatsApp or&nbsp;SMS within <span class="mark">5 minutes.</span>',
+            alarm: 'By providing us with your contact details you agree for&nbsp;processing of&nbsp;your personal data',
+            thanks_subtitle: 'Thank you!',
+            thanks_title: 'Your application is accepted',
+            thanks_link: 'Download',
+            modal_intro: 'Fill out the form and&nbsp;we will contact you within <span class="mark">5&nbsp;minutes.</span>',
+            send: 'Send',
+            title_send: 'Thank you, the&nbsp;application has been sent'
+        })
+    ]
+})
